@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CurvedBackground extends StatelessWidget {
-  final screenHeight;
+  final double screenHeight;
 
   CurvedBackground({this.screenHeight});
 

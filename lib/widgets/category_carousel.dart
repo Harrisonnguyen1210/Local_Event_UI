@@ -13,6 +13,7 @@ class CategoryCarousel extends StatelessWidget {
 
     return Container(
       height: 100,
+      margin: EdgeInsets.symmetric(horizontal: 16),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,

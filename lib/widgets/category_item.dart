@@ -28,7 +28,7 @@ class CategoryItem extends StatelessWidget {
                     ? Theme.of(context).primaryColor
                     : Theme.of(context).accentColor),
             borderRadius: BorderRadius.circular(10)),
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        margin: EdgeInsets.symmetric(horizontal: 8),
         width: 100,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

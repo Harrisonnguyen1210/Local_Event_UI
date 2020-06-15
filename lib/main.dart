@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_event/providers/category_provider.dart';
 import 'package:local_event/providers/event_provider.dart';
+import 'package:local_event/routes.dart';
 import 'package:local_event/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
           accentColor: Colors.white,
         ),
         home: HomeScreen(),
+        routes: routes,
       ),
     );
   }
