@@ -8,7 +8,7 @@ class CategoryCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoryProvider = Provider.of<CategoryProvider>(context);
+    final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
     final List<Category> categories = categoryProvider.categories;
 
     return Container(

@@ -10,7 +10,7 @@ class CurvedBackground extends StatelessWidget {
     return ClipPath(
       clipper: BottomShapeClipper(),
       child: Container(
-        height: screenHeight * 0.4,
+        height: screenHeight * 0.5,
         color: Theme.of(context).primaryColor,
       ),
     );

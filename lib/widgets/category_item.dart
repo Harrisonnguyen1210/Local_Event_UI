@@ -3,28 +3,26 @@ import 'package:local_event/models/category.dart';
 import 'package:local_event/providers/category_provider.dart';
 import 'package:provider/provider.dart';
 
-class CategoryItem extends StatefulWidget {
+class CategoryItem extends StatelessWidget {
   final Category category;
 
   CategoryItem(this.category);
 
   @override
-  _CategoryItemState createState() => _CategoryItemState();
-}
-
-class _CategoryItemState extends State<CategoryItem> {
-  @override
   Widget build(BuildContext context) {
     final categoryProvider = Provider.of<CategoryProvider>(context);
     final isSelected =
-        categoryProvider.selectedCategoryId == widget.category.categoryId;
-
+        categoryProvider.selectedCategoryId == category.categoryId;
     return GestureDetector(
-      onTap: () =>
-          categoryProvider.updateSelectedCategory(widget.category.categoryId),
+      onTap: () {
+        if (!isSelected)
+          categoryProvider.updateSelectedCategory(category.categoryId);
+      },
       child: Container(
         decoration: BoxDecoration(
-          color: isSelected ? Theme.of(context).accentColor : Theme.of(context).primaryColor,
+            color: isSelected
+                ? Theme.of(context).accentColor
+                : Theme.of(context).primaryColor,
             border: Border.all(
                 color: isSelected
                     ? Theme.of(context).primaryColor
@@ -36,14 +34,14 @@ class _CategoryItemState extends State<CategoryItem> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
-              widget.category.icon,
+              category.icon,
               size: 50,
               color: isSelected
                   ? Theme.of(context).primaryColor
                   : Theme.of(context).accentColor,
             ),
             Text(
-              widget.category.name,
+              category.name,
               style: TextStyle(
                   color: isSelected
                       ? Theme.of(context).primaryColor
