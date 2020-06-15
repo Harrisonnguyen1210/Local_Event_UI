@@ -65,4 +65,8 @@ class EventProvider extends ChangeNotifier {
   List<Event> get events {
     return _events;
   }
+
+  List<Event> filterEvent(int categoryId) {
+    return _events.where((event) => event.categoryIds.contains(categoryId)).toList();
+  }
 }

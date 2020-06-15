@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_event/providers/category_provider.dart';
 import 'package:local_event/providers/event_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -6,14 +7,15 @@ class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final eventProvider = Provider.of<EventProvider>(context);
-    final loadedEvents = eventProvider.events;
+    final categoryProvider = Provider.of<CategoryProvider>(context);
+    final loadedFilterEvents = eventProvider.filterEvent(categoryProvider.selectedCategoryId);
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 24, vertical: 48),
       child: ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        itemCount: loadedEvents.length,
+        itemCount: loadedFilterEvents.length,
         itemBuilder: (context, index) => Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
@@ -26,7 +28,7 @@ class EventList extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Image.network(
-                    loadedEvents[index].imagePath,
+                    loadedFilterEvents[index].imagePath,
                     height: 150,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -42,7 +44,7 @@ class EventList extends StatelessWidget {
                           Container(
                             margin: EdgeInsets.only(top: 8, bottom: 4),
                             child: Text(
-                              loadedEvents[index].title,
+                              loadedFilterEvents[index].title,
                               maxLines: 2,
                               style: TextStyle(
                                 fontSize: 20,
@@ -61,7 +63,7 @@ class EventList extends StatelessWidget {
                               ),
                               Flexible(
                                 child: Text(
-                                  loadedEvents[index].location,
+                                  loadedFilterEvents[index].location,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -86,7 +88,7 @@ class EventList extends StatelessWidget {
                           ),
                           Positioned(
                             child: Text(
-                              loadedEvents[index].duration,
+                              loadedFilterEvents[index].duration,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.black,
