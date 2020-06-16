@@ -26,11 +26,6 @@ class CategoryProvider extends ChangeNotifier {
       name: "Golf",
       icon: Icons.golf_course,
     ),
-    Category(
-      categoryId: 4,
-      name: "Birthday",
-      icon: Icons.cake,
-    ),
   ];
 
   List<Category> get categories{

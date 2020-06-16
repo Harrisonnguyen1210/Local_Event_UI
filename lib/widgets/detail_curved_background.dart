@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class DetailCurvedBackground extends StatelessWidget {
   final double screenHeight;
+  final String imagePath;
 
-  const DetailCurvedBackground({this.screenHeight});
+  const DetailCurvedBackground({this.screenHeight, this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class DetailCurvedBackground extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                    "https://cdn.tgdd.vn/Files/2019/06/19/1174302/duongchaycolormerun_800x450.jpg"),
+                    imagePath),
                 fit: BoxFit.cover,
               ),
             ),

@@ -16,7 +16,7 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(EventDetailScreen.route);
+        Navigator.of(context).pushNamed(EventDetailScreen.route, arguments: loadedFilterEvent);
       },
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),

@@ -6,7 +6,8 @@ class Event {
       duration,
       punchLine1,
       punchLine2;
-  final List categoryIds, galleryImages;
+  final List<int> categoryIds;
+  final List<String> guests, galleryImages;
 
   Event({
     this.imagePath,
@@ -18,5 +19,6 @@ class Event {
     this.punchLine2,
     this.categoryIds,
     this.galleryImages,
+    this.guests
   });
 }

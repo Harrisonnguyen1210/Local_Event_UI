@@ -5,16 +5,16 @@ import 'package:local_event/widgets/category_item.dart';
 import 'package:provider/provider.dart';
 
 class CategoryCarousel extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
+    final categoryProvider =
+        Provider.of<CategoryProvider>(context, listen: false);
     final List<Category> categories = categoryProvider.categories;
 
     return Container(
       height: 100,
-      margin: EdgeInsets.symmetric(horizontal: 16),
       child: ListView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 24),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
         itemBuilder: (context, index) => CategoryItem(categories[index]),
