@@ -16,7 +16,9 @@ class EventDetailScreen extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             DetailCurvedBackground(
-                screenHeight: MediaQuery.of(context).size.height, imagePath: loadedEvent.imagePath,),
+              screenHeight: MediaQuery.of(context).size.height,
+              imagePath: loadedEvent.imagePath,
+            ),
             ListView(
               children: <Widget>[
                 Container(
@@ -65,10 +67,12 @@ class EventDetailScreen extends StatelessWidget {
                           SizedBox(
                             width: 5,
                           ),
-                          Text(
-                            loadedEvent.location,
-                            style: TextStyle(
-                              color: Theme.of(context).accentColor,
+                          Flexible(
+                            child: Text(
+                              loadedEvent.location,
+                              style: TextStyle(
+                                color: Theme.of(context).accentColor,
+                              ),
                             ),
                           ),
                         ],

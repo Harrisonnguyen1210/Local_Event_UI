@@ -1,16 +1,11 @@
-# local_event
+# Local_Event
 
-A new Flutter project.
+A Flutter app created based on a design on Dribble with a purpose of displaying local events. 
 
-## Getting Started
+In this project, we will make UI layouts for with different event categories. Learn about creating beautiful widget components, manipulating CustomClipper and apply Provider state management.
 
-This project is a starting point for a Flutter application.
+Link to download app's apk: https://appsenjoy.com/files/80f3af7e96554dbbefb078e91dadd191.apk
 
-A few resources to get you started if this is your first Flutter project:
+## App demo
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Link to app's demo: https://www.youtube.com/watch?v=nJsYi_G3k3Q
